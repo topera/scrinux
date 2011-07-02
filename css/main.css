@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+body, input, span {
+	font-size: 14px;
+}
+
+body {
+	padding: 5px 10px;
+	background-color: white;
+	color: black;
+}
+
+.console, .caret {
+	background-color: black;
+	color: #f0f0f0;
+	font-family: courier,fixed,swiss,monospace,sans-serif;
+	border: 0px;
+	outline: none;	
+}
+
+.console {
+	padding: 2px;
+	width: 640px;
+	height: 480px;
+	overflow-y: auto;
+}
+
+.console span {
+	clear: left;
+	float: left;
+}
+
+.console span.lastCommand {
+	clear: none;
+	margin: -1px 0 0 7px;	
+}
+
+/*
+.console .caretBlink {
+	color: #0f0;
+	width: 9px;
+	heigth: 13px;
+	float: left;
+	margin-left: 6px;
+	text-decoration: blink;	
+}
+*/
+
+.console .caret {
+	float: left;
+	margin: -4px 0 0 6px;
+	width: 300px;
+}
