@@ -43,3 +43,14 @@ ROADMAP
 
 // ENTREGAS
 - cd, incluindo . e ..
+
+/**
+ * Paralelizacao
+ */
+- WebWorkers: nao compensa usar, pois
+	a) requerem arquivo externo
+	b) nao permitem alterar o RESOURCES, pq faz parte do DOM
+	
+	
+	
+	

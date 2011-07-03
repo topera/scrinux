@@ -6,24 +6,25 @@ function Cpu(){
 	_this.newProcess = function(command, closure){
 		debug("Creating new process...");
 		var p = API.factory.newProcess(_this.createPID(), command, closure);
-		var t = window.setInterval(p.run, SLEEP_TIME);
-		p.timer = t;
+		p.run();
 		RESOURCES.processes.push(p);
 	}
-
-	// processo esta indo dormir (ficar pausado)
+	
 	/*
-	_this.isAlive = function(pid){
-	}*/	
+	 // TODO: I think this problem can't be solved...
+	_this.newThread = function(closure){
+		// TODO: check if ; and "\n" are string literal
+		var a = closure.toString().replace(/([;\n])/g, "$1\ngo();");
+		return a;
+	}*/
 	
 	// processo esta indo dormir (ficar pausado)
 	_this.sleep = function(pid){
 		debug("Process " + pid + " going sleep...");
 		var p = _this.getProcessByPID(pid).process;
 		if (p) {
-			if (p.timer) {
-				window.clearInterval(p.timer);
-				p.timer = null;
+			if (p.state != "sleep") {
+				p.state = "sleep"
 			} else {
 				return "Warning: Process " + pid + " are already sleeping.";				
 			}
@@ -37,10 +38,10 @@ function Cpu(){
 		debug("Process " + pid + " waking up...");
 		var p = _this.getProcessByPID(pid).process;
 		if (p) {
-			if (p.timer) {
+			if (p.state != "sleep") {
 				return "Warning: Process " + pid + " are not sleeping.";				
 			} else {
-				p.timer = window.setInterval(p.run, SLEEP_TIME);				
+				p.state = "ready";				
 			}
 		} else {
 			return "Error: Process " + pid + " not found.";
@@ -79,3 +80,5 @@ function Cpu(){
 	
 }
 API.cpu = new Cpu();
+
+
