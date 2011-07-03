@@ -1,26 +1,9 @@
-
-30/05 - 1,5h
-01/06 - 1,5h
-02/06 - 1,5h
-03/06 - 1,5h
-06/06 - 1,0h 
-07/06 - 1,5h
-15/06 - 1,5h
-18/06 - 2,0h
-20/06 - 2,0h
-24/06 - 4,0h
-26/06 - 2,5h
-27/06 - 2,5h
-28/06 - 2,0h
-29/06 - 3,0h
-
-12h00
+- start: 30/05
+- end: 03/07
+- total: 33h
  
 AGORA
-	- paralelismo
 ROADMAP
-	- verificar paralelismo
-	- fazer nice
 	- hibernar
 	- variar tty
 	- encapsular comandos do terminal em processos
@@ -47,6 +30,7 @@ ROADMAP
 /**
  * Paralelizacao
  */
+- No way!
 - WebWorkers: nao compensa usar, pois
 	a) requerem arquivo externo
 	b) nao permitem alterar o RESOURCES, pq faz parte do DOM
