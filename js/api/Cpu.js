@@ -3,9 +3,9 @@ function Cpu(){
 	var _this = this;
 	
 	// factory de processos
-	_this.newProcess = function(){
+	_this.newProcess = function(command){
 		log("Creating new process...");
-		var p = new Process(_this.createPID());
+		var p = API.factory.newProcess(_this.createPID(), command);
 		var t = window.setInterval(p.run, SLEEP_TIME);
 		p.timer = t;
 		RESOURCES.processes.push(p);
@@ -20,10 +20,10 @@ function Cpu(){
 				window.clearInterval(p.timer);
 				p.timer = null;
 			} else {
-				throw new Error("Warning: Process " + pid + " are already sleeping.");				
+				return "Warning: Process " + pid + " are already sleeping.";				
 			}
 		} else {
-			throw new Error("Error: Process " + pid + " not found.");
+			return "Error: Process " + pid + " not found.";
 		}		
 	}
 
@@ -33,12 +33,12 @@ function Cpu(){
 		var p = _this.getProcessByPID(pid).process;
 		if (p) {
 			if (p.timer) {
-				throw new Error("Warning: Process " + pid + " are not sleeping.");				
+				return "Warning: Process " + pid + " are not sleeping.";				
 			} else {
 				p.timer = window.setInterval(p.run, SLEEP_TIME);				
 			}
 		} else {
-			throw new Error("Error: Process " + pid + " not found.");
+			return "Error: Process " + pid + " not found.";
 		}
 	}
 	
@@ -49,9 +49,10 @@ function Cpu(){
 			window.clearInterval(r.process.timer);
 			RESOURCES.processes.remove(r.index);
 		} else {
-			throw new Error("Error: Process " + pid + " not found.");
+			return "Error: Process " + pid + " not found.";
 		}
 		log("Process " + pid + " is killed!");
+		return "";
 	}
 	
 	// TODO: varrer pra ver se id sorteado ja nao existe
@@ -75,7 +76,7 @@ function Cpu(){
 API.cpu = new Cpu();
 
 // TODO: tirar isso
-function n(){API.cpu.newProcess();}
+function n(){API.cpu.newProcess("n()");}
 function k(p){API.cpu.kill(p);}
 function w(p){API.cpu.wake(p);}
 function s(p){API.cpu.sleep(p);}
