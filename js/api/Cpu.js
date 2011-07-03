@@ -2,18 +2,23 @@ function Cpu(){
 	
 	var _this = this;
 	
-	// factory de processos
-	_this.newProcess = function(command){
-		log("Creating new process...");
-		var p = API.factory.newProcess(_this.createPID(), command);
+	// creates a new cpu process
+	_this.newProcess = function(command, closure){
+		debug("Creating new process...");
+		var p = API.factory.newProcess(_this.createPID(), command, closure);
 		var t = window.setInterval(p.run, SLEEP_TIME);
 		p.timer = t;
 		RESOURCES.processes.push(p);
 	}
+
+	// processo esta indo dormir (ficar pausado)
+	/*
+	_this.isAlive = function(pid){
+	}*/	
 	
 	// processo esta indo dormir (ficar pausado)
 	_this.sleep = function(pid){
-		log("Process " + pid + " going sleep...");
+		debug("Process " + pid + " going sleep...");
 		var p = _this.getProcessByPID(pid).process;
 		if (p) {
 			if (p.timer) {
@@ -29,7 +34,7 @@ function Cpu(){
 
 	// processo acorda
 	_this.wake = function(pid){
-		log("Process " + pid + " waking up...");
+		debug("Process " + pid + " waking up...");
 		var p = _this.getProcessByPID(pid).process;
 		if (p) {
 			if (p.timer) {
@@ -51,7 +56,7 @@ function Cpu(){
 		} else {
 			return "Error: Process " + pid + " not found.";
 		}
-		log("Process " + pid + " is killed!");
+		debug("Process " + pid + " is killed!");
 		return "";
 	}
 	

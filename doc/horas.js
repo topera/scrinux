@@ -12,19 +12,22 @@
 26/06 - 2,5h
 27/06 - 2,5h
 28/06 - 2,0h
+29/06 - 3,0h
 
-22h00 - 
-
+12h00
+ 
 AGORA
-	- indo para processos...testando paralelismo
-	- vendo pra q serve processos
-	- serializando processos
-
-
+	- paralelismo
+ROADMAP
+	- verificar paralelismo
+	- fazer nice
+	- hibernar
+	- variar tty
+	- encapsular comandos do terminal em processos
+	- implementar modo grafico
+	
 // SEQUENCIA
 - ARQUITETURA
-	- migrar comandos para o /bin
-	(acho q nao...ja ta sem espaco)
 - FILESYSTEM
 	- fazer mkdir aceitar comandos como o do cd
 	- localStorage.setItem("RESOURCES", RESOURCES);
@@ -39,5 +42,4 @@ AGORA
 
 
 // ENTREGAS
-- estrutura basica
 - cd, incluindo . e ..
