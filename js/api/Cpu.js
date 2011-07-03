@@ -74,9 +74,3 @@ function Cpu(){
 	
 }
 API.cpu = new Cpu();
-
-// TODO: tirar isso
-function n(){API.cpu.newProcess("n()");}
-function k(p){API.cpu.kill(p);}
-function w(p){API.cpu.wake(p);}
-function s(p){API.cpu.sleep(p);}
