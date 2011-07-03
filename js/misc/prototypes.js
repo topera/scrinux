@@ -32,6 +32,14 @@ Date.prototype.unserialize = function(){
 	return new Date(this);
 }
 
+Date.prototype.elapsedTime = function(){
+	var d = new Date() - this;
+	var seconds = sprintf("%02d", Math.floor(d / 1000) % 60);	
+	var minutes = sprintf("%02d", Math.floor(d / 1000 / 60) % 60);
+	var hours = sprintf("%02d", Math.floor(d / 1000 / 60 / 60) % 24);
+	return d = hours + ":" + minutes + ":" + seconds;
+}
+
 // Array Remove - By John Resig (MIT Licensed)
 Array.prototype.remove = function(from, to) {
   var rest = this.slice((to || from) + 1 || this.length);
