@@ -1,3 +1,4 @@
+// TODO: improving this...it's awful!
 function Console(){
 	
 	var _this = this;
@@ -110,10 +111,8 @@ function Console(){
 	};	
 	
 	this.outbr = function(txt){
-		if (!txt) txt = "";
-		if (txt == "/") {txt = "\/";}
-		txt = txt.replace(/\n/g, "<br/>");		
-		if (txt == "") txt = "&nbsp;";
+		if (!txt) txt = "&nbsp;";
+		txt = txt.replace(/(.{80})/g, "$1\n");
 		_this.c().html(_this.c().html() + "<pre><span>" + txt + "</span></pre>");
 	};
 	
