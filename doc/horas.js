@@ -1,36 +1,26 @@
-- start: 30/05
-- end: 03/07
-- total: 33h
+- begin: 30/05/11
+- end: 05/07/11
+- workometer: 36h wasted...
  
-AGORA
 ROADMAP
-	- hibernar
-	- variar tty
-	- encapsular comandos do terminal em processos
-	- implementar modo grafico
+	- hibernate
+	- translate all to english
+	- switch tty
+	- send terminal commands as process
+	- make graphical mode
+	- make browser
+	- multiuser and permissions
 	
-// SEQUENCIA
-- ARQUITETURA
-- FILESYSTEM
-	- fazer mkdir aceitar comandos como o do cd
-	- localStorage.setItem("RESOURCES", RESOURCES);
-	- localStorage.getItem("RESOURCES");
-	- implementar permissoes e multiusuario
+DETAILS	
+	- fix commands
 
-// melhorias performance
-- deixar file bem enxuto e migrar metodos para filesystem
-	
-// TODO
-- tirar history do console
-
-
-// ENTREGAS
-- cd, incluindo . e ..
+IMPROVEMENTS
+	- take history out of console class
 
 /**
- * Paralelizacao
+ * paralelism
  */
-- No way!
+- I can't do it!!
 - WebWorkers: nao compensa usar, pois
 	a) requerem arquivo externo
 	b) nao permitem alterar o RESOURCES, pq faz parte do DOM
