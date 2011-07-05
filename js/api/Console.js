@@ -9,11 +9,11 @@ function Console(){
 	this.init = function(){
 		log("Starting console");
 		_this.events();
-		$("body").html("<div class='console'></div>");
+		$("#console").html("<div class='console'></div>");
 	}
 	
 	this.destroy = function(){
-		$("body").html("");
+		$("#console").html("");
 	}
 	
 	this.events = function(){

@@ -51,3 +51,56 @@ body {
 	margin: -4px 0 0 6px;
 	width: 300px;
 }
+
+#main {
+	font-family: Arial,sans-serif;
+	margin: 20px 0;
+	padding: 10px;
+	border: 1px solid #3366CC;
+	border-radius: 4px;
+	font-size: 14px
+}
+
+#main h1 {
+	padding: 10px;
+	border-radius: 2px;
+}
+
+#main h2 {
+	padding: 10px;
+	border-radius: 2px;
+	font-size: 10px;
+	margin-top: 10px;
+	text-align: center;
+	
+}
+
+#main .topics > li {
+	margin-top: 15px;
+}
+#main .topics > li > ul > li {
+	margin-top: 15px;
+}
+
+#main .topics li {
+	font-weight: normal;
+	text-shadow: none;
+	margin-left: 30px;
+	list-style: disc;
+}
+
+i {
+	font-style: italic;
+}
+
+#tip  {
+	margin: 3px 0;
+	padding: 6px 10px;
+	border: 1px solid #3366CC;
+	background-color: gray;
+	border-radius: 10px;
+}
+
+#title {
+	margin: 6px 0;
+}

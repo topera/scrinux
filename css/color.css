@@ -1,0 +1,21 @@
+@charset "UTF-8";
+/* http://colorschemedesigner.com/#0042G--9Bg0g0 */
+#main {
+	color: #040021;
+}
+
+#main h1, #main h2, #tip {
+	background-color: #E5ECF9;
+}
+
+em {
+	color: #796C3E;
+}
+
+a, a:active, a:visited {
+	color: #319331;
+}
+
+a:hover{
+	color: #791B1B;
+}

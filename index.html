@@ -4,8 +4,10 @@
 	<meta http-equiv="content-Type" content="text/html; charset=UTF-8"/>
 	<link rel="stylesheet" href="css/reset.css" type="text/css" /> 
 	<link rel="stylesheet" href="css/main.css" type="text/css" />
+	<link rel="stylesheet" href="css/color.css" type="text/css" />
 	 
-	<script type="text/javascript" src="js/lib/jquery-1.6.1.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+	<script>!window.jQuery && document.write('<script src="js/lib/jquery-1.6.1.min.js"><\/script>')</script>	
 	<script type="text/javascript" src="js/lib/sprintf-0.7-beta1.js"></script>
 	
 	<script type="text/javascript" src="js/misc/config.js"></script>
@@ -26,9 +28,126 @@
 	<script type="text/javascript" src="js/api/Loader.js"></script>
 	<script type="text/javascript" src="js/api/Boot.js"></script>
 	<script type="text/javascript" src="js/api/FileSystem.js"></script>
+	
+	<title>Scrinux OS - A Linux Clone Written in JavaScript</title>
 		
 </head>
 <body>
-Pre-alpha edition. Do not use yet!
+	<div id="title">Scrinux OS - A Linux Clone Written in JavaScript</div>
+	<div id="console"></div>
+	<div id="tip">TIP: Type TAB to see which linux commands are available.</div>
+	<div id="main">
+		<h1>Scrinux OS - A Linux Clone Written in JavaScript</h1>
+		<ul class="topics">
+			<li><em>Why write a OS in JS ?</em>
+				<ul class="subtopics">
+					<li>
+						Because this <i>can</i> be the future (or just dream).
+						<br/><br/>
+						We are in 2011. Think in 2015. Maybe everthing will be in the <a href="http://en.wikipedia.org/wiki/Cloud_computing">cloud</a>.
+						Not only your data (music, documents), but your processes too!
+						With Scrinux you will can hibernate your "PC" in a browser in your house,
+						and continue working in your session in another browser at your work.
+					</li>
+					<li>
+						Because <a href="http://www.google.com/chromebook/">Chromebooks</a> and <a href="http://www.chromium.org/chromium-os">Chrome OS</a>
+						can reach the world, so we will need more things running in a browser,
+						like a virtual filesystem (which scrinux have) and a process scheduler (which scrinux <i>almost</i> have) 
+					</li>					
+					<li>
+						Because JS is the language of web and everthing is going to web. Also, there are a lot of people making websites and interfaces for them.
+						So, why not use these skills to make interface of an operational system?
+					</li>
+				</ul>
+			</li>
+			<li><em>Which vantages/disadvantages?</em>
+				<ul class="subtopics">
+					<li>
+						VANTAGES comparing to a standard operational system:
+						<br/>- Its easier to customize (just html/css/js)
+						<br/>- Its easier to develop (don't worry with drivers)
+						<br/>- Its easier to test (just need a firebug)
+						<br/>- Its easier to integrate with web pages, because is a web page too.
+					</li>
+					<li>
+						DISADVANTAGES comparing to a standard operational system:
+						<br/>- Its slower
+						<br/>- Can't be real multithread and multicore (at least in current browsers)
+						<br/>- Don't have full access to machine (how to use a usb device, like a scanner?)
+						<br/>- Can't use full hard disk. Today this limit is 5MB do Firefox and 2.5MB to Chrome, using HTML5 <a href="http://diveintohtml5.org/storage.html">localStorage</a>.
+					</li>
+					<li>
+						VANTAGES comparing to the <a href="http://bellard.org/jslinux/">Javascript PC Emulator, by Fabrice Bellard</a>:
+						<br/>- Its faster because scrinux don't need to emulate a PC to understand binary code.
+					</li>
+					<li>
+						DISADVANTAGES comparing to the Javascript PC Emulator, by Fabrice Bellard:
+						<br/>- You can't import existing applications. In Javascript PC Emulator you just need to compile your *.c code to reuse.
+					</li>
+				</ul>
+			</li>			
+			<li><em>It isn't a OS really! This is fake!</em>
+				<ul class="subtopics">
+					<li>
+						Yes, you're right. Using formal definition, scrinux is NOT a OS. Who cares? :)			
+					</li>
+				</ul>
+			</li>
+			<li><em>What need to be done?</em>
+				<ul class="subtopics">
+					<li>
+						Improve Scrinux API and Scrinux Command Lines
+					</li>
+					<li>
+						Make processes to be serialized and restored when user reopen browser
+					</li>
+					<li>
+						Sync user data with a server: the current version just stores information in local machine.
+					</li>
+					<li>
+						Create a graphical mode, like KDE or GNOME. This graphical mode will be made using HTML default, SVG, canvas or
+						<a href="http://en.wikipedia.org/wiki/WebGL">WebGL</a>.
+						I don't know yet.
+					</li>
+					<li>
+						Create MANY applications to this graphical mode, like:
+						<br/>- A File System Browser, to user see his files (stored in cache local or in the cloud)
+						<br/>- A Web Browser (each tab is a iframe, easy to do this).
+						<br/>- Games, with WebGL, for instance.
+					</li>
+				</ul>			
+			</li>
+			<li><em>Which requirements to run this?</em>
+				<ul class="subtopics">
+					<li>
+						To run this demo, you need Chrome 10+, FF3.6+ or IE8+.
+					</li>
+				</ul>			
+			</li>
+			<li><em>I like it! How can I help?</em>
+				<ul class="subtopics">
+					<li>
+						Wow thanks. I will need a lot of help.
+						I created a repository in git hub. Take a look <a href="https://github.com/topera/scrinux">there</a>.
+					</li>
+				</ul>			
+			</li>
+			<li><em>Why this page is so ugly?</em>
+				<ul class="subtopics">
+					<li>Because It's in pre-alpha version yet! Please wait a little more.</li>
+					<li>Because I'm not a designer, sorry.</li>
+					<li>Because english isn't my native language, sorry again bud. (I speak portuguese)</li>
+				</ul>
+			</li>			
+			<li><em>Any thanks?</em>
+				<ul class="subtopics">
+					<li>Thanks to you, to read until here (no scrolling, lol).</li>
+					<li>Fabrice Bellard, for his impressive Emulator.</li>
+					<li>John Resing, for jQuery</li>
+				</ul>
+			</li>			
+		</ul>
+		<h2>By Rafael "Topera" Santos - 2011 - All right reserved.</h2>		
+	</div>
 </body>
 </html>

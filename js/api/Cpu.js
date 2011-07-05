@@ -19,6 +19,7 @@ function Cpu(){
 	}*/
 	
 	// processo esta indo dormir (ficar pausado)
+	// TODO: use state for something...
 	_this.sleep = function(pid){
 		debug("Process " + pid + " going sleep...");
 		var p = _this.getProcessByPID(pid).process;
