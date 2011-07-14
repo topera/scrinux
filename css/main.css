@@ -80,6 +80,7 @@ body {
 }
 #main .topics > li > ul > li {
 	margin-top: 15px;
+	line-height: 18px;
 }
 
 #main .topics li {
@@ -104,3 +105,31 @@ i {
 #title {
 	margin: 6px 0;
 }
+
+#i18ntoolbox {
+	position: fixed;
+	right: 0px;
+	top: 4px;
+	border: 1px solid #3366CC;
+	background-color: white;
+	margin-right: 10px;
+	border-radius: 10px;
+}
+
+#i18ntoolbox li {
+	float: left;
+	padding: 2px 4px;
+	font-family: arial;
+	color: #319331;
+}
+	
+#i18ntoolbox li:hover {
+	cursor: pointer;
+	color: #791B1B;
+}
+	
+[data-language] {
+	display: none;
+}	
+	
+	

@@ -1,7 +1,12 @@
 - begin: 30/05/11
 - end: 05/07/11
-- workometer: 36h wasted...
+- workometer: 37h wasted...
+
+21h00
  
+- making startx
+	- seeing why Object.prototype.foobar is breaking jquery ui
+
 ROADMAP
 	- hibernate
 	- translate all to english

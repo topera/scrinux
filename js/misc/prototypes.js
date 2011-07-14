@@ -1,7 +1,8 @@
 // Object
+/*
 Object.prototype.getClass = function(){
 	return this.class ? this.class : typeof(this);
-}
+}*/
 
 // Number
 Number.prototype.human = function(){

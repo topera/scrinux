@@ -5,10 +5,17 @@
 	<link rel="stylesheet" href="css/reset.css" type="text/css" /> 
 	<link rel="stylesheet" href="css/main.css" type="text/css" />
 	<link rel="stylesheet" href="css/color.css" type="text/css" />
+	<link rel="stylesheet" href="css/humanity/jquery-ui-1.8.14.css" type="text/css" />	
 	 
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 	<script>!window.jQuery && document.write('<script src="js/lib/jquery-1.6.1.min.js"><\/script>')</script>	
+	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script>
+	<script>!window.jQuery && document.write('<script src="js/lib/jquery-ui-1.8.14.min.js"><\/script>')</script>
+		
 	<script type="text/javascript" src="js/lib/sprintf-0.7-beta1.js"></script>
+	
+	<script type="text/javascript" src="js/page/page.js"></script>
 	
 	<script type="text/javascript" src="js/misc/config.js"></script>
 	<script type="text/javascript" src="js/misc/prototypes.js"></script>	
@@ -29,20 +36,34 @@
 	<script type="text/javascript" src="js/api/Boot.js"></script>
 	<script type="text/javascript" src="js/api/FileSystem.js"></script>
 	
+	<!-- graphical mode -->
+	<script type="text/javascript" src="js/api/Gnome.js"></script>
+	
 	<title>Scrinux OS - A Linux Clone Written in JavaScript</title>
 		
 </head>
 <body>
-	<div id="title">Scrinux OS - A Linux Clone Written in JavaScript</div>
+	<ul id="i18ntoolbox">
+		<li data-set-lang="en">english</li>
+		<li data-set-lang="pt">português</li>
+	</ul>
+	<div id="title">
+		<p data-language="en">Scrinux OS - A Linux Clone Written in JavaScript</p>
+		<p data-language="pt">Scrinux OS - Um clone do Linux escrito em JavaScript</p>
+	</div>
 	<div id="console"></div>
-	<div id="tip">TIP: Type TAB to see which linux commands are available.</div>
+	<div id="tip">
+		<p data-language="en">TIP: Type TAB to see which linux commands are available.</p>
+		<p data-language="pt">DICA: Tecle TAB para ver quais comandos do linux estão disponíveis.</p>
+	</div>
 	<div id="main">
-		<h1>Scrinux OS - A Linux Clone Written in JavaScript</h1>
-		<ul class="topics">
+		<h1 data-language="en">Scrinux OS - A Linux Clone Written in JavaScript</h1>
+		<h1 data-language="pt">Scrinux OS - Um clone do Linux escrito em JavaScript</h1>
+		<ul class="topics" data-language="en">
 			<li><em>Why write a OS in JS ?</em>
 				<ul class="subtopics">
 					<li>
-						Because this <i>can</i> be the future (or just a dream).
+						Because this <i>can</i> be the future of web.
 						<br/><br/>
 						We are in 2011. Think in 2015. Maybe everthing will be in the <a href="http://en.wikipedia.org/wiki/Cloud_computing">cloud</a>.
 						Not only your data (music, documents), but your processes too!
@@ -132,18 +153,11 @@
 					</li>
 				</ul>			
 			</li>
-			<li><em>Why this page is so ugly?</em>
-				<ul class="subtopics">
-					<li>Because It's in pre-alpha version yet! Please wait a little more.</li>
-					<li>Because I'm not a designer, sorry.</li>
-					<li>Because english isn't my native language, sorry again bud. (I speak portuguese)</li>
-				</ul>
-			</li>
 			<li><em>Is there some similar work?</em>
 				<ul class="subtopics">
 					<li><a href="http://en.wikipedia.org/wiki/EyeOS">eyeOS</a></li>
 					<li><a href="http://en.wikipedia.org/wiki/CloudMe">CloudMe</a> <i>(formerly icloud)</i></li>
-					<li><a href="http://en.wikipedia.org/wiki/YouOS">YouOS</a><i>(no longer available)</i></li>
+					<li><a href="http://en.wikipedia.org/wiki/YouOS">YouOS</a> <i>(no longer available)</i></li>
 				</ul>			
 			</li>
 			<li><em>Any thanks?</em>
@@ -154,7 +168,120 @@
 				</ul>
 			</li>			
 		</ul>
-		<h2>By Rafael "Topera" Santos - 2011 - All right reserved.</h2>		
+		<ul class="topics" data-language="pt">
+			<li><em>Porque escrever um SO em JS?</em>
+				<ul class="subtopics">
+					<li>
+						Porque isso <i>pode</i> ser o futuro da web.
+						<br/><br/>
+						Estamos em 2011. Pense em 2015.
+						Talvez tudo estará na <a href="http://en.wikipedia.org/wiki/Cloud_computing">nuvem</a>.
+						Não apenas seus dados (músicas, documentos), mas seu processos também!
+						Com Scrinux você poderá hibernar seu "PC" em um navegador na sua casa,
+						e continuar trabalhando na mesma sessão em outro navegador em seu trabalho, por exemplo.
+					</li>
+					<li>
+						Porque os <a href="http://www.google.com/chromebook/">Chromebooks</a> e o <a href="http://www.chromium.org/chromium-os">Chrome OS</a> 
+						podem ter alcance global, e por isso iremos precisar de mais coisas rodando num navegador,
+						como um sistema de arquivos virtual (o que scrinux tem) e um gerenciador de processos
+						(que o scrinux <i>quase</i> tem)
+					</li>					
+					<li>
+						Porque JS é a linguagem da web e tudo está indo para web.
+						Além disso, existem muitas pessoas fazendo sites e interfaces para eles.
+						Então, porque não usar estas habilidades para fazer a interface de um sistema operacional?
+					</li>
+				</ul>
+			</li>
+			<li><em>Quais as vantagens e disvantagens disso?</em>
+				<ul class="subtopics">
+					<li>
+						VANTAGENS comparando com um sistema operacional tradicional:
+						<br/>- É mais fácil de personalizar (precisa apenas de html/css/js)
+						<br/>- É mais fácil de desenvolver (não há a preocupação com implementação de drivers, por exemplo)
+						<br/>- É mais fácil de testar (precisa apenas do firebug)
+						<br/>- É mais fácil de integrar com paginas web, já que o SO já é uma página.
+					</li>
+					<li>
+						DESVANTAGENS comparando com um sistema operacional tradicional:
+						<br/>- É mais lento.
+						<br/>- Não pode ser multithread real nem multicore (pelo menos nos browsers de hoje)
+						<br/>- Não tem acesso total aos recursos da máquina. (como usar um dispositivo usb, como um scanner?)
+						<br/>- Não pode usar o HD inteiro. Atualmente o limite é de 5MB para o Firefox e 2.5MB para Chrome, utilizando o <a href="http://diveintohtml5.org/storage.html">localStorage</a> do HTML5.
+					</li>
+					<li>
+						VANTAGENS comparando com o <a href="http://bellard.org/jslinux/">Javascript PC Emulator, de Fabrice Bellard</a>:
+						<br/>- É mais rápido, pois o scrinux não precisa emular um PC para entender código binário.
+					</li>
+					<li>
+						DESVANTAGENS comparando com o Javascript PC Emulator, de Fabrice Bellard:
+						<br/>- Você não pode importar aplicações existentes. No emulador é necessário apenas compilar o código-fonte *.c e reusar.
+					</li>
+				</ul>
+			</li>			
+			<li><em>Isso não é realmente um SO! Isso é uma farsa!</em>
+				<ul class="subtopics">
+					<li>
+						Sim, você tá certo. Por qualquer definição formal, scrinux NÃO é um SO. E daí? :)			
+					</li>
+				</ul>
+			</li>
+			<li><em>O que ainda precisa ser feito?</em>
+				<ul class="subtopics">
+					<li>
+						Melhorar a API do Scrinux e programas via linha de comando.
+					</li>
+					<li>
+						Fazer os processos serem serializados e restaurados ao reabrir o browser.
+					</li>
+					<li>
+						Sincronizar os dados do usuário com um servidor: a versão atual apenas armazena os dados na máquina local.
+					</li>
+					<li>
+						Criar um modo gráfico, como KDE ou GNOME. Este modo gráfico será feito com HTML simples, SVN,
+						canvas default ou <a href="http://en.wikipedia.org/wiki/WebGL">WebGL</a>.   
+						Ainda não sei.
+					</li>
+					<li>
+						Criar diversas aplicações para esta interface gráfica, como:
+						<br/>- Um navegador de sistema de arquivos, para que o usuário possa ver seus arquivos (armazenados no cache local e/ou na nuvem)
+						<br/>- Um navegador web (cada aba do navegador seria um iframe, simples de ser feito).
+						<br/>- Jogos, usando WebGL, por exemplo.
+					</li>
+				</ul>			
+			</li>
+			<li><em>Quais os requisitos para rodar isso?</em>
+				<ul class="subtopics">
+					<li>
+						Para executar este demo, é necessário ter Chrome 10+, FF3.6+ or IE8+.
+					</li>
+				</ul>			
+			</li>
+			<li><em>Curti! Como posso ajudar?</em>
+				<ul class="subtopics">
+					<li>
+						Opa, legal. Vou precisar de bastate ajuda, hehe.
+						Criei um repositório no git hub. Dá uma olhada <a href="https://github.com/topera/scrinux">lá</a>.
+					</li>
+				</ul>			
+			</li>
+			<li><em>Há algum trabalho parecido por aí?</em>
+				<ul class="subtopics">
+					<li><a href="http://en.wikipedia.org/wiki/EyeOS">eyeOS</a></li>
+					<li><a href="http://en.wikipedia.org/wiki/CloudMe">CloudMe</a> <i>(antes chamava icloud)</i></li>
+					<li><a href="http://en.wikipedia.org/wiki/YouOS">YouOS</a> <i>(descontinuado)</i></li>
+				</ul>			
+			</li>
+			<li><em>Algum agradecimento?</em>
+				<ul class="subtopics">
+					<li>A você, por ter lido até aqui (descendo a rodinha do mouse não vale, hehe).</li>
+					<li>A Fabrice Bellard, por seu impressionante emulador.</li>
+					<li>A John Resing, pelo jQuery</li>
+				</ul>
+			</li>			
+		</ul>
+		<h2 data-language="en">By Rafael Pereira dos Santos (a.k.a Topera) - 2011 - All right reserved.</h2>		
+		<h2 data-language="pt">Por Rafael Pereira dos Santos (vulgo Topera) - 2011 - Todos os direitos reservados.</h2>		
 	</div>
 </body>
 
@@ -171,5 +298,6 @@
   })();
 
 </script>
+
 
 </html>
