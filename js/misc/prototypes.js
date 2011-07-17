@@ -35,6 +35,14 @@ Date.prototype.elapsedTime = function(){
 	return d = hours + ":" + minutes + ":" + seconds;
 }
 
+Date.prototype.clock = function(){
+	var d = new Date();
+	var seconds = sprintf("%02d", d.getSeconds());	
+	var minutes = sprintf("%02d", d.getMinutes());
+	var hours = sprintf("%02d", d.getHours());
+	return d = hours + ":" + minutes + ":" + seconds;
+}
+
 // Array Remove - By John Resig (MIT Licensed)
 Array.prototype.remove = function(from, to) {
   var rest = this.slice((to || from) + 1 || this.length);

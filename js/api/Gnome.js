@@ -17,13 +17,16 @@ function Gnome() {
 		// button app
 		$(".panel").append('<div class="buttonWrapper"><input type="checkbox" class="button applications-btn" id="applications-btn" /><label for="applications-btn">Applications</label></div>');
 		$(".applications-btn").button({icons: {primary: "icon-start"}});
+		$(".applications-btn").click(function(){
+			$("#console").dialog({resizable: false, width: 646});
+		});				
 		
 		// button about
 		$(".panel").append("<div class='button about-btn'>About</div>");
 		$(".about-btn").button();
 		$(".about-btn").click(function(){
 			var content = $("#about").html();
-			content = content.replace("$version", VERSION).replace("$lastUpdate", LAST_UPDATE);
+			content = content.replace(/\$version/g, VERSION).replace(/\$lastUpdate/g, LAST_UPDATE);
 			$("#about").html(content);
 			$("#about").dialog({resizable: false});
 		});		
@@ -33,17 +36,13 @@ function Gnome() {
 		$(".faq-btn").button();
 		$(".faq-btn").click(function(){
 			$("#main .i18ntoolbox").show();
-			$("#main").dialog({minWidth: 800, maxHeight: 500});
+			$("#main").dialog({minWidth: 800, height: 500});
 		});		
 		
 		// clock app
-		$(".panel").append("<div class='button clock-btn right-btn'>00:00:00</div>");
+		$(".panel").append("<div class='button clock-btn right-btn'></div>");
 		window.setInterval(function(){
-			var now = new Date();
-			var time = now.getHours() + ":";
-			time += now.getMinutes() + ":";
-			time += now.getSeconds();
-			$(".clock-btn").html("<span class='ui-button-text'>" + time + "</span>");
+			$(".clock-btn").html("<span class='ui-button-text'>" + new Date().clock() + "</span>");
 		}, 1000);
 		$(".clock-btn").button();
 		

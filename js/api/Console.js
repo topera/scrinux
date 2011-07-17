@@ -112,7 +112,7 @@ function Console(){
 	
 	this.outbr = function(txt){
 		if (!txt) txt = "&nbsp;";
-		txt = txt.replace(/(.{80})/g, "$1\n");
+		txt = txt.replace(/(.{78})/g, "$1\n");
 		_this.c().html(_this.c().html() + "<pre><span>" + txt + "</span></pre>");
 	};
 	

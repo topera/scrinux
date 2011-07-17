@@ -1,18 +1,14 @@
 - begin: 30/05/11
 - end: 16/07/11
-- workometer: 40h wasted...
+- workometer: 45h wasted... :)
 
-18h00
- 
-- making startx
-	- seeing why Object.prototype.foobar is breaking jquery ui
 
 ROADMAP
 	- hibernate
 	- translate all to english
 	- switch tty
 	- send terminal commands as process
-	- make graphical mode
+	- make graphical mode API
 	- make browser
 	- multiuser and permissions
 	

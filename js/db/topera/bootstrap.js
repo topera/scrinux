@@ -1,4 +1,4 @@
-API.system.run("startx");
+API.gnome.start();
 /*
 var fs = API.fileSystem;
 fs.newFile("g10.txt");

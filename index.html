@@ -6,52 +6,17 @@
 	<link rel="stylesheet" href="css/main.css" type="text/css" />
 	<link rel="stylesheet" href="css/color.css" type="text/css" />
 	<link rel="stylesheet" href="css/humanity/jquery-ui-1.8.14.css" type="text/css" />	
-	 
-	<script type="text/javascript" src="js/misc/config.js"></script>
-	
-	<script>ENV == "prd" && document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"><\/script>')</script>	
-	<script>!window.jQuery && document.write('<script src="js/lib/jquery-1.6.1.min.js"><\/script>')</script>	
-	
-	<script>ENV == "prd" && document.write('<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"><\/script>')</script>	
-	<script>!window.$.ui && document.write('<script src="js/lib/jquery-ui-1.8.14.min.js"><\/script>')</script>
-		
-	<script type="text/javascript" src="js/lib/sprintf-0.7-beta1.js"></script>
-	<script type="text/javascript" src="js/page/page.js"></script>
-	
-	<script type="text/javascript" src="js/misc/prototypes.js"></script>	
-	<script type="text/javascript" src="js/misc/util.js"></script>
-	
-	<script type="text/javascript" src="js/resources/Resources.js"></script>
-	<script type="text/javascript" src="js/resources/File.js"></script>
-	<script type="text/javascript" src="js/resources/Process.js"></script>
-	
-	<script type="text/javascript" src="js/api/Api.js"></script>
-	<script type="text/javascript" src="js/api/Factory.js"></script>
-	<script type="text/javascript" src="js/api/Cast.js"></script>
-	<script type="text/javascript" src="js/api/DB.js"></script>
-	<script type="text/javascript" src="js/api/System.js"></script>
-	<script type="text/javascript" src="js/api/Cpu.js"></script>
-	<script type="text/javascript" src="js/api/Console.js"></script>
-	<script type="text/javascript" src="js/api/Loader.js"></script>
-	<script type="text/javascript" src="js/api/Boot.js"></script>
-	<script type="text/javascript" src="js/api/FileSystem.js"></script>
-	
-	<!-- graphical mode -->
-	<script type="text/javascript" src="js/api/Gnome.js"></script>
 	
 	<title>Scrinux OS - A Linux Clone Written in JavaScript</title>
 		
 </head>
 <body>
-	<ul class="i18ntoolbox">
-		<li data-set-lang="en">english</li>
-		<li data-set-lang="pt">português</li>
-	</ul>
+	<div id="hideScreen"></div>
 	<div id="title">
 		<p data-language="en">Scrinux OS - A Linux Clone Written in JavaScript</p>
 		<p data-language="pt">Scrinux OS - Um clone do Linux escrito em JavaScript</p>
 	</div>
-	<div id="console"></div>
+	<div id="console" title="console"></div>
 	<div id="tip">
 		<p data-language="en">TIP: Type TAB to see which linux commands are available.</p>
 		<p data-language="pt">DICA: Tecle TAB para ver quais comandos do linux estão disponíveis.</p>
@@ -316,19 +281,54 @@
 	
 </body>
 
-<script type="text/javascript">
+<script type="text/javascript" src="js/misc/config.js"></script>
 
+<script>ENV == "prd" && document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"><\/script>')</script>	
+<script>!window.jQuery && document.write('<script src="js/lib/jquery-1.6.1.min.js"><\/script>')</script>	
+
+<script>ENV == "prd" && document.write('<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"><\/script>')</script>	
+<script>!window.$.ui && document.write('<script src="js/lib/jquery-ui-1.8.14.min.js"><\/script>')</script>
+	
+<script type="text/javascript" src="js/lib/sprintf-0.7-beta1.js"></script>
+<script type="text/javascript" src="js/page/page.js"></script>
+
+<script type="text/javascript" src="js/misc/prototypes.js"></script>	
+<script type="text/javascript" src="js/misc/util.js"></script>
+
+<script type="text/javascript" src="js/resources/Resources.js"></script>
+<script type="text/javascript" src="js/resources/File.js"></script>
+<script type="text/javascript" src="js/resources/Process.js"></script>
+
+<script type="text/javascript" src="js/api/Api.js"></script>
+<script type="text/javascript" src="js/api/Factory.js"></script>
+<script type="text/javascript" src="js/api/Cast.js"></script>
+<script type="text/javascript" src="js/api/DB.js"></script>
+<script type="text/javascript" src="js/api/System.js"></script>
+<script type="text/javascript" src="js/api/Cpu.js"></script>
+<script type="text/javascript" src="js/api/Console.js"></script>
+<script type="text/javascript" src="js/api/Loader.js"></script>
+<script type="text/javascript" src="js/api/Boot.js"></script>
+<script type="text/javascript" src="js/api/FileSystem.js"></script>
+
+<!-- graphical mode -->
+<script type="text/javascript" src="js/api/Gnome.js"></script>
+
+
+<script type="text/javascript">
+$(function(){
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-24358440-1']);
   _gaq.push(['_trackPageview']);
-
   (function() {
     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
+});
 
 </script>
+
+
 
 
 </html>

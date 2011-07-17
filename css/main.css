@@ -8,6 +8,7 @@ body {
 	padding: 5px 10px;
 	background-color: white;
 	color: black;
+	overflow: hidden;
 }
 
 .console, .caret {
@@ -101,8 +102,8 @@ body {
 	list-style: disc;
 }
 
-#main .subtopics {
-	display: none;
+#console.ui-dialog-content {
+	padding: 2px 0 0 0;
 }
 
 i {
@@ -152,6 +153,20 @@ i {
 	display: none;
 }	
 	
+#hideScreen {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border: 0px;
+	outline: 0px;
+	top: 0px;
+	left: 0px;
+	background-color: black;
+	background-image: url("../img/logoScrinux.png");
+	background-position: 51% 37%;
+	background-repeat: no-repeat;
+}
+
 #desktop {
 	position: absolute;
 	width: 100%;
@@ -229,10 +244,11 @@ body.gnomed {
 }
 
 /* jquery override */
+/*
 #desktop .panel .ui-state-active,
 #desktop .panel .ui-widget-content .ui-state-active,
 #desktop .panel .ui-widget-header .ui-state-active { border: 1px solid #e0cfc2; background: #f4f0ec url(images/ui-bg_highlight-hard_100_f4f0ec_1x100.png) 50% 50% repeat-x; font-weight: normal; color: #b85700; }
-
+*/
 .hide {
 	display: none;
 }

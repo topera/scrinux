@@ -7,9 +7,9 @@ $(function(){
 	// FAQ
 	$("#main a").attr("target", "_blank").attr("title", "This link will open a new window");	
 	$(".topics > li > em").toggle(function(){
-		$(this).parents("li:eq(0)").find(".subtopics").show();
-	}, function(){
 		$(this).parents("li:eq(0)").find(".subtopics").hide();
+	}, function(){
+		$(this).parents("li:eq(0)").find(".subtopics").show();
 	});
 	
 });
