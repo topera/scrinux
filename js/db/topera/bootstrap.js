@@ -1,3 +1,4 @@
+API.system.run("startx");
 /*
 var fs = API.fileSystem;
 fs.newFile("g10.txt");

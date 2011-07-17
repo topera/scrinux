@@ -1,8 +1,8 @@
 - begin: 30/05/11
-- end: 05/07/11
-- workometer: 37h wasted...
+- end: 16/07/11
+- workometer: 40h wasted...
 
-21h00
+18h00
  
 - making startx
 	- seeing why Object.prototype.foobar is breaking jquery ui

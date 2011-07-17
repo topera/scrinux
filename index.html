@@ -7,17 +7,17 @@
 	<link rel="stylesheet" href="css/color.css" type="text/css" />
 	<link rel="stylesheet" href="css/humanity/jquery-ui-1.8.14.css" type="text/css" />	
 	 
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/misc/config.js"></script>
+	
+	<script>ENV == "prd" && document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"><\/script>')</script>	
 	<script>!window.jQuery && document.write('<script src="js/lib/jquery-1.6.1.min.js"><\/script>')</script>	
 	
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script>
-	<script>!window.jQuery && document.write('<script src="js/lib/jquery-ui-1.8.14.min.js"><\/script>')</script>
+	<script>ENV == "prd" && document.write('<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"><\/script>')</script>	
+	<script>!window.$.ui && document.write('<script src="js/lib/jquery-ui-1.8.14.min.js"><\/script>')</script>
 		
 	<script type="text/javascript" src="js/lib/sprintf-0.7-beta1.js"></script>
-	
 	<script type="text/javascript" src="js/page/page.js"></script>
 	
-	<script type="text/javascript" src="js/misc/config.js"></script>
 	<script type="text/javascript" src="js/misc/prototypes.js"></script>	
 	<script type="text/javascript" src="js/misc/util.js"></script>
 	
@@ -43,7 +43,7 @@
 		
 </head>
 <body>
-	<ul id="i18ntoolbox">
+	<ul class="i18ntoolbox">
 		<li data-set-lang="en">english</li>
 		<li data-set-lang="pt">português</li>
 	</ul>
@@ -56,7 +56,11 @@
 		<p data-language="en">TIP: Type TAB to see which linux commands are available.</p>
 		<p data-language="pt">DICA: Tecle TAB para ver quais comandos do linux estão disponíveis.</p>
 	</div>
-	<div id="main">
+	<div id="main" title="FAQ">
+		<ul class="i18ntoolbox inner">
+			<li data-set-lang="en">english</li>
+			<li data-set-lang="pt">português</li>
+		</ul>	
 		<h1 data-language="en">Scrinux OS - A Linux Clone Written in JavaScript</h1>
 		<h1 data-language="pt">Scrinux OS - Um clone do Linux escrito em JavaScript</h1>
 		<ul class="topics" data-language="en">
@@ -283,6 +287,33 @@
 		<h2 data-language="en">By Rafael Pereira dos Santos (a.k.a Topera) - 2011 - All right reserved.</h2>		
 		<h2 data-language="pt">Por Rafael Pereira dos Santos (vulgo Topera) - 2011 - Todos os direitos reservados.</h2>		
 	</div>
+	
+	<div class="hide">
+		<div id="about" title="About Scrinux">
+			<ul class="i18ntoolbox">
+				<li data-set-lang="en">english</li>
+				<li data-set-lang="pt">português</li>
+			</ul>		
+			<b>Scrinux OS</b>
+			<p data-language="en">
+				<br/>Scrinux is a Linux Clone written in JavaScript.
+				<br>
+				<br/>Its a pre-alpha version yet.
+				<br/>
+				<br/>Version: $version
+				<br/>Last Update: $lastUpdate
+			</p> 
+			<p data-language="pt">
+				<br/>Scrinux é um clone do Linux, escrito em JavaScript.
+				<br>
+				<br/>Ainda é uma versão pré-alfa.
+				<br/>
+				<br/>Versão: $version
+				<br/>Última atualização: $lastUpdate
+			</p> 
+		</div>	
+	</div>
+	
 </body>
 
 <script type="text/javascript">

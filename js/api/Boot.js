@@ -6,7 +6,7 @@ function Boot(){
 		log("Booting scrinux.");
 		API.console.init();
 		API.console.outbr("Starting Linux");
-		API.console.outbr("Linux version 0.0.10 (topera@gmail)");
+		API.console.outbr("Linux version " + VERSION + " (topera@gmail)");
 		API.console.updateCaret();
 		API.loader.init();		
 	};
